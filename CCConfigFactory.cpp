@@ -10,9 +10,10 @@
 auto CCConfigFactory::make_debug(string logfile) -> CCConfig {
     return CCConfig{ logfile, "gcc" };
 }
-auto CCConfigFactory::make_user(filesystem::path const basepath) -> CCConfig {
+auto CCConfigFactory::make_user(string basepath) -> CCConfig {
     auto path = basepath;
-    auto username = string(getlogin()) + ".log";
-    path.append(username);
-    return CCConfig{ path.string(), "cc" };
+    auto filename = string(getlogin()) + ".log";
+    path += "/";
+    path += filename;
+    return CCConfig{ path, "cc" };
 }

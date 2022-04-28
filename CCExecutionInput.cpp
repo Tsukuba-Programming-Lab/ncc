@@ -24,7 +24,9 @@ void CCExecutionInput::build_file_contents(vector<string> args) {
     auto cfiles = extract_cfiles(args);
     for (auto cfile: cfiles) {
         auto ifs = ifstream(cfile);
-        auto content = string(istreambuf_iterator(ifs), istreambuf_iterator<char>());
+        stringstream buffer;
+        buffer << ifs.rdbuf();
+        auto content = buffer.str();
         this->file_contents[cfile] = content;
     }
 }

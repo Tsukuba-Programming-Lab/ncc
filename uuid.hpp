@@ -68,7 +68,7 @@ private:
     // 16進変換 + 上位不足桁をゼロ埋め
     template<typename CNT>
     static std::string toHex(CNT value);
-    static std::string toHex(unsigned char value[]);
+    static std::string toHex(unsigned char value[], size_t vsize);
 };
 
 template<typename CNT>

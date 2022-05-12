@@ -41,7 +41,7 @@ Uuid Uuid::newUuid()
 std::string Uuid::toString()
 {
     return toHex(this->a).append("-").append(toHex(this->b))
-        .append("-").append(toHex(this->c)).append("-").append(toHex(this->d));
+        .append("-").append(toHex(this->c)).append("-").append(toHex(this->d, 8));
 }
 
 std::array<unsigned char, 16> Uuid::toByte()
@@ -83,11 +83,10 @@ Uuid::_TempU64 Uuid::gen()
     return value;
 }
 
-std::string Uuid::toHex(unsigned char value[])
+std::string Uuid::toHex(unsigned char value[], size_t vsize)
 {
     std::string str;
-    int len = sizeof(value);
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < vsize; i++) {
         str.append(toHex(value[i]));
     }
     return str;

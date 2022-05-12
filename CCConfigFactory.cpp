@@ -13,10 +13,11 @@ auto CCConfigFactory::make_debug(string logfile) -> CCConfig {
 }
 auto CCConfigFactory::make_user(string basepath) -> CCConfig {
     auto path = basepath;
-    cout << "error" << endl;
+    cout << "error1" << endl;
     auto filename = string(getlogin()) + ".log";
+    cout << "error2" << endl;
     path += "/";
     path += filename;
-    cout << "error" << endl;
+    cout << "error3" << endl;
     return CCConfig{ path, "cc" };
 }

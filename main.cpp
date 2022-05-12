@@ -18,7 +18,8 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    char* username = getlogin();
+    auto username = getenv("LOGNAME");
+    
     if (username == NULL) {
         cout << "NULL" << endl;
     } else {

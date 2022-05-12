@@ -17,15 +17,6 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    
-    auto username = getenv("LOGNAME");
-    
-    if (username == NULL) {
-        cout << "NULL" << endl;
-    } else {
-        cout << username << endl;
-    }
-    
 #if DEBUG
     vector<string> args = { "gcc", "/Users/yuki/Developer/Git/ncc/sample.c"s };
     auto logpath = "/Users/yuki/Desktop/ncc.log"s;

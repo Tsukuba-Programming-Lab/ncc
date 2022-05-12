@@ -8,19 +8,23 @@
 #include <iostream>
 #include "CCConfigFactory.hpp"
 
+string get_username() {
+    auto username = getenv("LOGNAME");
+    if (username == NULL) {
+        throw "User名が取得できませんでした。"s;
+    } else {
+        return string(username);
+    }
+}
+
 auto CCConfigFactory::make_debug(string logfile) -> CCConfig {
     return CCConfig{ logfile, "gcc" };
 }
 auto CCConfigFactory::make_user(string basepath) -> CCConfig {
     auto path = basepath;
-    cout << "error" << endl;
-    
-    string filename;
-    filename.append(getlogin());
-    filename.append(".log");
-    cout << "error" << endl;
-    
+    string filename = get_username() + ".log";
     path += "/";
     path += filename;
     return CCConfig{ path, "cc" };
 }
+

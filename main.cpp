@@ -18,7 +18,12 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    cout << getlogin() << endl;
+    char* username = getlogin();
+    if (username == NULL) {
+        cout << "NULL" << endl;
+    } else {
+        cout << username << endl;
+    }
     
 #if DEBUG
     vector<string> args = { "gcc", "/Users/yuki/Developer/Git/ncc/sample.c"s };

@@ -16,18 +16,17 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    cout << __func__ << 1 << endl;
 #if DEBUG
     vector<string> args = { "gcc", "/Users/yuki/Developer/Git/ncc/sample.c" };
     auto logpath = "/Users/yuki/Desktop/ncc.log";
     auto config = CCConfigFactory::make_debug(logpath);
 #else
-    cout << __func__ << 2 << endl;
+    cout << "error" << endl;
     vector<string> args(argv, argv+argc);
+    cout << "error" << endl;
     auto basepath = "/www/nakai.hisashi.gt/Lecture/Programming/log";
     auto config = CCConfigFactory::make_user(basepath);
 #endif
-    cout << __func__ << 3 << endl;
     auto logger = make_shared<CCLogger>(config);
     auto ncc = CCCommand(config, logger, CommandExecutor::shared());
     

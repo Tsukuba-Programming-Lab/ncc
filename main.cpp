@@ -23,9 +23,9 @@ int main(int argc, const char * argv[]) {
 #else
     cout << "error" << endl;
     vector<string> args(argv, argv+argc);
-    cout << "error" << endl;
     auto basepath = "/www/nakai.hisashi.gt/Lecture/Programming/log";
     auto config = CCConfigFactory::make_user(basepath);
+    cout << "error" << endl;
 #endif
     auto logger = make_shared<CCLogger>(config);
     auto ncc = CCCommand(config, logger, CommandExecutor::shared());

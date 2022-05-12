@@ -14,6 +14,7 @@ CCCommand::CCCommand(CCConfig _config, shared_ptr<CCLogger> _logger, shared_ptr<
 }
 
 void CCCommand::run(vector<string> const args) const {
+    cout << __func__ << endl;
     auto input = make_shared<CCExecutionInput>(args);
     this->logger->loginput(input);
     

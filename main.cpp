@@ -17,13 +17,13 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
 #if DEBUG
-    vector<string> args = { "gcc", "/Users/yuki/Developer/Git/ncc/sample.c" };
-    auto logpath = "/Users/yuki/Desktop/ncc.log";
+    vector<string> args = { "gcc", "/Users/yuki/Developer/Git/ncc/sample.c"s };
+    auto logpath = "/Users/yuki/Desktop/ncc.log"s;
     auto config = CCConfigFactory::make_debug(logpath);
 #else
-    cout << "error" << endl;
     vector<string> args(argv, argv+argc);
-    auto basepath = "/www/nakai.hisashi.gt/Lecture/Programming/log";
+    auto basepath = "/www/nakai.hisashi.gt/Lecture/Programming/log"s;
+    cout << "error" << endl;
     auto config = CCConfigFactory::make_user(basepath);
     cout << "error" << endl;
 #endif

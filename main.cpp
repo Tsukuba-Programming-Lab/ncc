@@ -9,8 +9,10 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include <unistd.h>
 #include <fstream>
+
+#include <unistd.h>
+#include <string.h>
 
 #include "CCCommand.hpp"
 #include "CurlLogWriter.hpp"

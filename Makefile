@@ -4,7 +4,7 @@ CFLAGS =
 
 TARGET = ncc
 
-SRCS = main.cpp CCCommand.cpp CCConfig.cpp CCConfigFactory.cpp CCExecutionInput.cpp CCLogger.cpp CommandExecutor.cpp uuid.cpp
+SRCS = main.cpp CCCommand.cpp CCExecutionInput.cpp CCLogger.cpp CommandExecutor.cpp uuid.cpp StringWriter.cpp CurlLogWriter.cpp
 
 OBJS    = $(SRCS:.cpp=.o)
 

@@ -10,12 +10,12 @@
 		B616CD67281A6B5500990EEE /* CommandExecutor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD5B281A6B5400990EEE /* CommandExecutor.cpp */; };
 		B616CD68281A6B5500990EEE /* CCLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD5D281A6B5400990EEE /* CCLogger.cpp */; };
 		B616CD69281A6B5500990EEE /* CCCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD5F281A6B5500990EEE /* CCCommand.cpp */; };
-		B616CD6A281A6B5500990EEE /* CCConfigFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD61281A6B5500990EEE /* CCConfigFactory.cpp */; };
 		B616CD6B281A6B5500990EEE /* CCExecutionInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD63281A6B5500990EEE /* CCExecutionInput.cpp */; };
-		B616CD6C281A6B5500990EEE /* CCConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD64281A6B5500990EEE /* CCConfig.cpp */; };
 		B616CD6E281A6B7B00990EEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD6D281A6B7B00990EEE /* main.cpp */; };
 		B616CD71281A6C2600990EEE /* uuid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B616CD6F281A6C2600990EEE /* uuid.cpp */; };
 		B616CD73281A6D1900990EEE /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B616CD72281A6D1900990EEE /* Makefile */; };
+		B66B580E2840DF4700C94C13 /* StringWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66B580C2840DF4700C94C13 /* StringWriter.cpp */; };
+		B66B58112840F96D00C94C13 /* CurlLogWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66B580F2840F96D00C94C13 /* CurlLogWriter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,17 +34,13 @@
 		B616CD4E281A6B3100990EEE /* ncc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ncc; sourceTree = BUILT_PRODUCTS_DIR; };
 		B616CD58281A6B5400990EEE /* print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = print.hpp; sourceTree = "<group>"; };
 		B616CD59281A6B5400990EEE /* CommandResult.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommandResult.hpp; sourceTree = "<group>"; };
-		B616CD5A281A6B5400990EEE /* CCConfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCConfig.hpp; sourceTree = "<group>"; };
 		B616CD5B281A6B5400990EEE /* CommandExecutor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommandExecutor.cpp; sourceTree = "<group>"; };
 		B616CD5C281A6B5400990EEE /* CCExecutionInput.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCExecutionInput.hpp; sourceTree = "<group>"; };
 		B616CD5D281A6B5400990EEE /* CCLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCLogger.cpp; sourceTree = "<group>"; };
 		B616CD5E281A6B5500990EEE /* CommandExecutor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommandExecutor.hpp; sourceTree = "<group>"; };
 		B616CD5F281A6B5500990EEE /* CCCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCCommand.cpp; sourceTree = "<group>"; };
 		B616CD60281A6B5500990EEE /* CommandError.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommandError.hpp; sourceTree = "<group>"; };
-		B616CD61281A6B5500990EEE /* CCConfigFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCConfigFactory.cpp; sourceTree = "<group>"; };
-		B616CD62281A6B5500990EEE /* CCConfigFactory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCConfigFactory.hpp; sourceTree = "<group>"; };
 		B616CD63281A6B5500990EEE /* CCExecutionInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCExecutionInput.cpp; sourceTree = "<group>"; };
-		B616CD64281A6B5500990EEE /* CCConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCConfig.cpp; sourceTree = "<group>"; };
 		B616CD65281A6B5500990EEE /* CCLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCLogger.hpp; sourceTree = "<group>"; };
 		B616CD66281A6B5500990EEE /* CCCommand.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCCommand.hpp; sourceTree = "<group>"; };
 		B616CD6D281A6B7B00990EEE /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -52,6 +48,10 @@
 		B616CD70281A6C2600990EEE /* uuid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = uuid.hpp; sourceTree = "<group>"; };
 		B616CD72281A6D1900990EEE /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		B616CD76281A6D7B00990EEE /* sample.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sample.c; sourceTree = "<group>"; };
+		B66B580C2840DF4700C94C13 /* StringWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringWriter.cpp; sourceTree = "<group>"; };
+		B66B580D2840DF4700C94C13 /* StringWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StringWriter.hpp; sourceTree = "<group>"; };
+		B66B580F2840F96D00C94C13 /* CurlLogWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CurlLogWriter.cpp; sourceTree = "<group>"; };
+		B66B58102840F96D00C94C13 /* CurlLogWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CurlLogWriter.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +91,6 @@
 				B616CD70281A6C2600990EEE /* uuid.hpp */,
 				B616CD5F281A6B5500990EEE /* CCCommand.cpp */,
 				B616CD66281A6B5500990EEE /* CCCommand.hpp */,
-				B616CD64281A6B5500990EEE /* CCConfig.cpp */,
-				B616CD5A281A6B5400990EEE /* CCConfig.hpp */,
-				B616CD61281A6B5500990EEE /* CCConfigFactory.cpp */,
-				B616CD62281A6B5500990EEE /* CCConfigFactory.hpp */,
 				B616CD63281A6B5500990EEE /* CCExecutionInput.cpp */,
 				B616CD5C281A6B5400990EEE /* CCExecutionInput.hpp */,
 				B616CD5D281A6B5400990EEE /* CCLogger.cpp */,
@@ -104,6 +100,10 @@
 				B616CD5E281A6B5500990EEE /* CommandExecutor.hpp */,
 				B616CD59281A6B5400990EEE /* CommandResult.hpp */,
 				B616CD58281A6B5400990EEE /* print.hpp */,
+				B66B580C2840DF4700C94C13 /* StringWriter.cpp */,
+				B66B580D2840DF4700C94C13 /* StringWriter.hpp */,
+				B66B580F2840F96D00C94C13 /* CurlLogWriter.cpp */,
+				B66B58102840F96D00C94C13 /* CurlLogWriter.hpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -167,13 +167,13 @@
 			files = (
 				B616CD73281A6D1900990EEE /* Makefile in Sources */,
 				B616CD6B281A6B5500990EEE /* CCExecutionInput.cpp in Sources */,
-				B616CD6A281A6B5500990EEE /* CCConfigFactory.cpp in Sources */,
+				B66B580E2840DF4700C94C13 /* StringWriter.cpp in Sources */,
 				B616CD71281A6C2600990EEE /* uuid.cpp in Sources */,
 				B616CD69281A6B5500990EEE /* CCCommand.cpp in Sources */,
 				B616CD67281A6B5500990EEE /* CommandExecutor.cpp in Sources */,
 				B616CD6E281A6B7B00990EEE /* main.cpp in Sources */,
 				B616CD68281A6B5500990EEE /* CCLogger.cpp in Sources */,
-				B616CD6C281A6B5500990EEE /* CCConfig.cpp in Sources */,
+				B66B58112840F96D00C94C13 /* CurlLogWriter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

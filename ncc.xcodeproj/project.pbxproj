@@ -55,6 +55,7 @@
 		B66B58102840F96D00C94C13 /* CurlLogWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CurlLogWriter.hpp; sourceTree = "<group>"; };
 		B66B58122841098200C94C13 /* base64.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = base64.cpp; sourceTree = "<group>"; };
 		B66B58132841098200C94C13 /* base64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = base64.hpp; sourceTree = "<group>"; };
+		B66B581528410CB000C94C13 /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 		B616CD45281A6B3100990EEE = {
 			isa = PBXGroup;
 			children = (
+				B66B581528410CB000C94C13 /* main.py */,
 				B616CD76281A6D7B00990EEE /* sample.c */,
 				B616CD72281A6D1900990EEE /* Makefile */,
 				B616CD75281A6D3400990EEE /* src */,

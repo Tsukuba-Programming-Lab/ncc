@@ -11,19 +11,20 @@
 #include <chrono>
 #include <thread>
 
-CommandExecutor::CommandExecutor() {
-    if (!system(nullptr)) throw CommandError::notAvailable();
+auto CommandExecutor::shared() -> shared_ptr<CommandExecutor> {
+    static auto shared_instance = make_shared<CommandExecutor>(false);
+    return shared_instance;
 }
 
-auto CommandExecutor::shared() -> shared_ptr<CommandExecutor> {
-    static auto shared_instance = shared_ptr<CommandExecutor>();
+auto CommandExecutor::silent() -> shared_ptr<CommandExecutor> {
+    static auto shared_instance = make_shared<CommandExecutor>(true);
     return shared_instance;
 }
 
 auto CommandExecutor::execute(const string command, const vector<string> arguments) const -> shared_ptr<CommandResult> {
     const auto commandline = this->build_commandline(command, arguments);
     auto exit_code = -1;
-    
+        
     auto pipe = shared_ptr<FILE>(popen(commandline.data(), "r"), [&exit_code](auto _) {
         exit_code = pclose(_);
     });
@@ -44,7 +45,7 @@ auto CommandExecutor::read_pipe(const shared_ptr<FILE> pipe) const -> string {
     auto output = ""s;
     array<char, 256> buf;
     while (!feof(pipe.get())) if (fgets(buf.data(), buf.size(), pipe.get())) {
-        cout << buf.data();
+        if (!disable_stdout) cout << buf.data();
         output += buf.data();
     }
     return output;
@@ -54,9 +55,16 @@ auto CommandExecutor::build_commandline(const string command, const vector<strin
     auto args = vector<string>();
     args.push_back(command);
     args.insert(args.end(), arguments.begin(), arguments.end());
+    
     auto os = ostringstream();
     copy(args.begin(), args.end(), ostream_iterator<string>(os, " "));
-
-    auto command_line = os.str() + "2>&1";
+    
+    string command_line;
+    for (auto s: args) {
+        command_line += "\"";
+        command_line += s;
+        command_line += "\" ";
+    }
+    command_line + "2>&1";
     return command_line;
 }

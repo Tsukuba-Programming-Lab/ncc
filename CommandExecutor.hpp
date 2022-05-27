@@ -22,10 +22,16 @@ using namespace std;
 
 class CommandExecutor {
 public:
+    bool disable_stdout;
     static auto shared() -> shared_ptr<CommandExecutor>;
+    static auto silent() -> shared_ptr<CommandExecutor>;
+    
+    CommandExecutor(bool _disable_stdout) : disable_stdout(_disable_stdout) {
+        if (!system(nullptr)) throw CommandError::notAvailable();
+    };
+    
     auto execute(const string command, const vector<string> arguments) const -> shared_ptr<CommandResult>;
 private:
-    CommandExecutor();
     auto build_commandline(const string command, const vector<string> arguments) const -> string;
     auto read_pipe(const shared_ptr<FILE> pipe) const -> string;
 };

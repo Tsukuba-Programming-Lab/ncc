@@ -9,20 +9,34 @@
 #define CurlLogWriter_hpp
 
 #include "StringWriter.hpp"
+#include "CommandExecutor.hpp"
+#include "base64.hpp"
 
 #include <sstream>
 #include <curl/curl.h>
 
+struct CurlPostClient {
+    static auto post(string username, string log) -> shared_ptr<CommandResult> {
+        auto data = "{\\\"logdata\\\": \\\""s + log + "\\\", \\\"user\\\": \\\"" + username + "\\\" }";
+                
+        auto res = CommandExecutor::silent()->execute("curl", {
+            "https://cgi.u.tsukuba.ac.jp/~s1911399/main.py",
+            "-s",
+            "-H", "Content-Type: application/json",
+            "-d", data,
+        });
+        
+        return res;
+    }
+};
 
 class CurlLogWriter: public StringWriter {
 private:
-    bool debug;
     string username;
     
     stringstream buffer;
 public:
-    CurlLogWriter(bool _debug, string _username) : debug(_debug), username(_username) {
-    }
+    CurlLogWriter(string _username) :  username(_username) {}
     
     void write(string data) override {
         buffer << data;
@@ -30,7 +44,14 @@ public:
     
     void close() override {
         auto logdata = buffer.str();
+        auto source = vector<unsigned char>(logdata.begin(), logdata.end());
         
+        string elogdata; algorithm::encode_base64(source, elogdata);
+        auto res = CurlPostClient::post(username, elogdata);
+        
+        if (res->kind != CommandResult::Kind::Success) {
+            cout << "[ncc] Log Post error" << std::endl;
+        }
     }
 };
 

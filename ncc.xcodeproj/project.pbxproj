@@ -16,6 +16,7 @@
 		B616CD73281A6D1900990EEE /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B616CD72281A6D1900990EEE /* Makefile */; };
 		B66B580E2840DF4700C94C13 /* StringWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66B580C2840DF4700C94C13 /* StringWriter.cpp */; };
 		B66B58112840F96D00C94C13 /* CurlLogWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66B580F2840F96D00C94C13 /* CurlLogWriter.cpp */; };
+		B66B581428410A6300C94C13 /* base64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66B58122841098200C94C13 /* base64.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,8 @@
 		B66B580D2840DF4700C94C13 /* StringWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StringWriter.hpp; sourceTree = "<group>"; };
 		B66B580F2840F96D00C94C13 /* CurlLogWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CurlLogWriter.cpp; sourceTree = "<group>"; };
 		B66B58102840F96D00C94C13 /* CurlLogWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CurlLogWriter.hpp; sourceTree = "<group>"; };
+		B66B58122841098200C94C13 /* base64.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = base64.cpp; sourceTree = "<group>"; };
+		B66B58132841098200C94C13 /* base64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = base64.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				B66B580D2840DF4700C94C13 /* StringWriter.hpp */,
 				B66B580F2840F96D00C94C13 /* CurlLogWriter.cpp */,
 				B66B58102840F96D00C94C13 /* CurlLogWriter.hpp */,
+				B66B58122841098200C94C13 /* base64.cpp */,
+				B66B58132841098200C94C13 /* base64.hpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				B616CD6B281A6B5500990EEE /* CCExecutionInput.cpp in Sources */,
 				B66B580E2840DF4700C94C13 /* StringWriter.cpp in Sources */,
 				B616CD71281A6C2600990EEE /* uuid.cpp in Sources */,
+				B66B581428410A6300C94C13 /* base64.cpp in Sources */,
 				B616CD69281A6B5500990EEE /* CCCommand.cpp in Sources */,
 				B616CD67281A6B5500990EEE /* CommandExecutor.cpp in Sources */,
 				B616CD6E281A6B7B00990EEE /* main.cpp in Sources */,

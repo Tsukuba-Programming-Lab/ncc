@@ -45,6 +45,7 @@ auto CommandExecutor::read_pipe(const shared_ptr<FILE> pipe) const -> string {
     auto output = ""s;
     array<char, 256> buf;
     while (!feof(pipe.get())) if (fgets(buf.data(), buf.size(), pipe.get())) {
+        if (!disable_stdout) cout << buf.data();
         output += buf.data();
     }
     return output;

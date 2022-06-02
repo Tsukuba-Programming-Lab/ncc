@@ -13,6 +13,9 @@ echo "type bin directory (~/[input]/ncc)"
 read -p "> " ncc_dir
 
 ncc_path="$HOME/$ncc_dir"
+if [ -z "$ncc_dir" ]; then
+    ncc_path="$HOME"
+fi
 if [ ! -e $ncc_path ]; then
     mkdir -p $ncc_path; 
 fi

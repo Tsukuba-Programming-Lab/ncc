@@ -11,17 +11,15 @@ class InputParser:
     def __init__(self, form):
         json_data = json.loads(form.value)        
         self.username = json_data["user"]
-        self.logdata = base64.decode(json_data["logdata"])
+        self.logdata = base64.b64decode(json_data["logdata"])
     
 class LogWriter:
     def __init__(self, logdir):
         self.logdir = logdir
         
         if not os.path.exists(logdir):
-            print("Make dir", logdir)
             os.makedirs(logdir)
         elif not os.path.isdir(logdir):
-            print("Remake dir", logdir)
             os.remove()
             os.makedirs(logdir)
             

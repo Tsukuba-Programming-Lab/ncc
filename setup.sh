@@ -23,7 +23,7 @@ fi
 # make dir (if not exists)
 cgi_path="/www/$LOGNAME/wwws/cgi-bin/$cgi_dir"
 if [ -z "$cgi_dir" ]; then
-    cgi_path="$HOME/wwws/cgi-bin"
+    cgi_path="/www/$LOGNAME/wwws/cgi-bin"
 fi
 
 if [ ! -e $cgi_path ]; then

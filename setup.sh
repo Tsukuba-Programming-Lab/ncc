@@ -19,6 +19,10 @@ fi
 
 # make dir (if not exists)
 cgi_path="$HOME/wwws/cgi-bin/$cgi_dir"
+if [ -z "$cgi_dir" ]; then
+    cgi_path="$HOME/wwws/cgi-bin"
+fi
+
 if [ ! -e $cgi_path ]; then
     mkdir -p $cgi_path; 
 fi
@@ -26,6 +30,10 @@ fi
 echo ''
 
 cgi_url="https://cgi.u.tsukuba.ac.jp/~$LOGNAME/$cgi_dir/main.py" 
+if [ -z "$cgi_dir" ]; then
+    cgi_url="https://cgi.u.tsukuba.ac.jp/~$LOGNAME/main.py" 
+fi
+
 
 echo "CGI path: $cgi_path/main.py"
 echo "CGI URL: $cgi_url"

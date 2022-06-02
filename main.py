@@ -18,8 +18,10 @@ class LogWriter:
         self.logdir = logdir
         
         if not os.path.exists(logdir):
+            print("Make dir", logdir)
             os.makedirs(logdir)
         elif not os.path.isdir(logdir):
+            print("Remake dir", logdir)
             os.remove()
             os.makedirs(logdir)
             

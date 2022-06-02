@@ -25,6 +25,8 @@ struct CurlPostClient {
             "-H", "Content-Type: application/json",
             "-d", data,
         });
+
+        cout << res->output << endl;
         
         return res;
     }

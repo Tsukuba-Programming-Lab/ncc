@@ -41,6 +41,5 @@ try:
 
     print("{ \"success\": true }")
 except Exception as e:
-    print(e)
     print("{ \"success\": false }")
 

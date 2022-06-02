@@ -34,7 +34,7 @@ int main(int argc, const char * argv[]) {
     auto writer = make_shared<CurlLogWriter>("https://cgi.u.tsukuba.ac.jp/~s1911399/main.py", get_username());
 #else
     vector<string> args(argv, argv+argc);
-    auto writer = make_shared<CurlLogWriter>("::CGI_PLACEHOLDER::", get_username());
+    auto writer = make_shared<CurlLogWriter>("https://cgi.u.tsukuba.ac.jp/~yuki/sample/main.py", get_username());
 #endif
     auto logger = make_shared<CCLogger>(writer);
     auto ncc = CCCommand(logger, CommandExecutor::shared());

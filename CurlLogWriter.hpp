@@ -16,11 +16,11 @@
 #include <curl/curl.h>
 
 struct CurlPostClient {
-    static auto post(string username, string log) -> shared_ptr<CommandResult> {
+    static auto post(string url, string username, string log) -> shared_ptr<CommandResult> {
         auto data = "{\\\"logdata\\\": \\\""s + log + "\\\", \\\"user\\\": \\\"" + username + "\\\" }";
                 
         auto res = CommandExecutor::silent()->execute("curl", {
-            "https://cgi.u.tsukuba.ac.jp/~s1911399/main.py",
+            url,
             "-s",
             "-H", "Content-Type: application/json",
             "-d", data,
@@ -32,11 +32,12 @@ struct CurlPostClient {
 
 class CurlLogWriter: public StringWriter {
 private:
+    string url;
     string username;
     
     stringstream buffer;
 public:
-    CurlLogWriter(string _username) :  username(_username) {}
+    CurlLogWriter(string _url, string _username) : url(_url), username(_username) {}
     
     void write(string data) override {
         buffer << data;
@@ -47,7 +48,7 @@ public:
         auto source = vector<unsigned char>(logdata.begin(), logdata.end());
         
         string elogdata; algorithm::encode_base64(source, elogdata);
-        auto res = CurlPostClient::post(username, elogdata);
+        auto res = CurlPostClient::post(url, username, elogdata);
         
         if (res->kind != CommandResult::Kind::Success) {
             cout << "[ncc] Log Post error" << std::endl;

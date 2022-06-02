@@ -30,7 +30,7 @@ void CCLogger::logresult(shared_ptr<CommandResult> result) {
         writer->p("Failure")->p("(")->p(result->exit_code)->p(")")->endl();
     }
     log_separator("Output");
-    writer->p(result->output);
+    writer->p(result->output)->endl();
 }
 
 void CCLogger::close() {

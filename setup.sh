@@ -12,10 +12,6 @@ read -p "> " cgi_dir
 echo "type bin directory (~/[input]/ncc)"
 read -p "> " ncc_dir
 
-if [ -z "$cgi_dir" ]; then
-    echo "Empty CGI directory"; exit 1
-fi
-
 ncc_path="$HOME/$ncc_dir"
 if [ ! -e $ncc_path ]; then
     mkdir -p $ncc_path; 
